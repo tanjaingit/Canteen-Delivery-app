@@ -1,0 +1,44 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>signup</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+   <body>
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">MyCanteeN</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ url_for('index') }}">LOGIN</a></li>
+                <li><a href="{{ url_for('index') }}">MENU</a></li>
+                <!-- <li><a href="#">FEEDBACK</a></li> -->
+              </ul>
+            </div>
+          </nav>
+
+          <div class="container">
+
+            <form class="form-signin" method="POST" action="/signup">
+              <h2 class="form-signin-heading">Sign Up</h2>
+              {{ form.hidden_tag() }}
+              {{ wtf.form_field(form.name) }}
+              {{ wtf.form_field(form.enroll) }}
+              {{ wtf.form_field(form.email) }}
+              {{ wtf.form_field(form.number) }}
+              {{ wtf.form_field(form.psw) }}
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+            </form>
+          </div>          
+    </body>
+</html>
+
+
